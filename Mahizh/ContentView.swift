@@ -26,7 +26,9 @@ struct ContentView: View {
 	var body: some View {
 		VStack {
 			HStack {
-				Text("mahizh!")
+				Image(systemName: "bird.circle.fill")
+					.font(.largeTitle)
+				Text("mahizh")
 					.font(.title)
 					.fontWeight(.bold)
 				Spacer()
@@ -44,6 +46,11 @@ struct ContentView: View {
 						proxy.scrollTo(id, anchor: .bottom)
 					}
 				}
+			}
+			HStack{
+				Text("Hey! Prabs. I'm Mahizh. Your digital assistant. How I can help you?")
+					.background(.white)
+					.foregroundColor(.black)
 			}
 			ScrollView(.horizontal) {
 				LazyHStack {
