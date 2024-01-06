@@ -7,24 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9011F24D2B093938002DB1B6 /* MahizhApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9011F24C2B093938002DB1B6 /* MahizhApp.swift */; };
-		9011F24F2B093938002DB1B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9011F24E2B093938002DB1B6 /* ContentView.swift */; };
+		9011F24F2B093938002DB1B6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9011F24E2B093938002DB1B6 /* HomeView.swift */; };
 		9011F2512B09393A002DB1B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9011F2502B09393A002DB1B6 /* Assets.xcassets */; };
 		9011F2542B09393A002DB1B6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9011F2532B09393A002DB1B6 /* Preview Assets.xcassets */; };
 		9011F25B2B093CDA002DB1B6 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9011F25A2B093CDA002DB1B6 /* ChatView.swift */; };
 		9011F25D2B093D08002DB1B6 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9011F25C2B093D08002DB1B6 /* Loading.swift */; };
 		9011F2602B093D7F002DB1B6 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9011F25F2B093D7F002DB1B6 /* ChatMessage.swift */; };
+		901B98E82B4971DD004AF176 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 901B98E72B4971DD004AF176 /* Preview Content */; };
+		901B98EA2B4972AE004AF176 /* PicQueryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901B98E92B4972AE004AF176 /* PicQueryApp.swift */; };
+		9034F0C72B488CFA0021125A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034F0C62B488CFA0021125A /* HomeViewModel.swift */; };
+		9034F0CF2B4913F00021125A /* MLInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034F0CE2B4913F00021125A /* MLInput.swift */; };
+		9034F0D12B4915430021125A /* StringTokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034F0D02B4915430021125A /* StringTokenizer.swift */; };
+		9034F0D32B4915C20021125A /* Vocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034F0D22B4915C20021125A /* Vocabulary.swift */; };
+		9034F0D52B4917DF0021125A /* MLOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034F0D42B4917DF0021125A /* MLOutput.swift */; };
+		9034F0D82B4918890021125A /* bert-base-uncased-vocab.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9034F0D62B4918790021125A /* bert-base-uncased-vocab.txt */; };
+		9034F0D92B4918890021125A /* BERTQAFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9034F0D72B4918890021125A /* BERTQAFP16.mlmodel */; };
+		9034F0DD2B4922380021125A /* MLQAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034F0DC2B4922380021125A /* MLQAModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9011F2492B093938002DB1B6 /* Mahizh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mahizh.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9011F24C2B093938002DB1B6 /* MahizhApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MahizhApp.swift; sourceTree = "<group>"; };
-		9011F24E2B093938002DB1B6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9011F2492B093938002DB1B6 /* PicQuery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicQuery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9011F24E2B093938002DB1B6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9011F2502B09393A002DB1B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9011F2532B09393A002DB1B6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9011F25A2B093CDA002DB1B6 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		9011F25C2B093D08002DB1B6 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		9011F25F2B093D7F002DB1B6 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		901B98E72B4971DD004AF176 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
+		901B98E92B4972AE004AF176 /* PicQueryApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PicQueryApp.swift; sourceTree = "<group>"; };
+		9034F0C62B488CFA0021125A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9034F0CE2B4913F00021125A /* MLInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLInput.swift; sourceTree = "<group>"; };
+		9034F0D02B4915430021125A /* StringTokenizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTokenizer.swift; sourceTree = "<group>"; };
+		9034F0D22B4915C20021125A /* Vocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vocabulary.swift; sourceTree = "<group>"; };
+		9034F0D42B4917DF0021125A /* MLOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLOutput.swift; sourceTree = "<group>"; };
+		9034F0D62B4918790021125A /* bert-base-uncased-vocab.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bert-base-uncased-vocab.txt"; sourceTree = "<group>"; };
+		9034F0D72B4918890021125A /* BERTQAFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BERTQAFP16.mlmodel; sourceTree = "<group>"; };
+		9034F0DC2B4922380021125A /* MLQAModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLQAModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +59,7 @@
 		9011F2402B093938002DB1B6 = {
 			isa = PBXGroup;
 			children = (
-				9011F24B2B093938002DB1B6 /* Mahizh */,
+				9011F24B2B093938002DB1B6 /* PicQuery */,
 				9011F24A2B093938002DB1B6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,23 +67,32 @@
 		9011F24A2B093938002DB1B6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9011F2492B093938002DB1B6 /* Mahizh.app */,
+				9011F2492B093938002DB1B6 /* PicQuery.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9011F24B2B093938002DB1B6 /* Mahizh */ = {
+		9011F24B2B093938002DB1B6 /* PicQuery */ = {
 			isa = PBXGroup;
 			children = (
+				901B98E92B4972AE004AF176 /* PicQueryApp.swift */,
+				901B98E72B4971DD004AF176 /* Preview Content */,
+				9034F0DC2B4922380021125A /* MLQAModel.swift */,
+				9034F0D62B4918790021125A /* bert-base-uncased-vocab.txt */,
+				9034F0D72B4918890021125A /* BERTQAFP16.mlmodel */,
 				9011F25E2B093D6E002DB1B6 /* Model */,
-				9011F24C2B093938002DB1B6 /* MahizhApp.swift */,
-				9011F24E2B093938002DB1B6 /* ContentView.swift */,
+				9011F24E2B093938002DB1B6 /* HomeView.swift */,
+				9034F0C62B488CFA0021125A /* HomeViewModel.swift */,
 				9011F2502B09393A002DB1B6 /* Assets.xcassets */,
 				9011F2522B09393A002DB1B6 /* Preview Content */,
 				9011F25A2B093CDA002DB1B6 /* ChatView.swift */,
 				9011F25C2B093D08002DB1B6 /* Loading.swift */,
+				9034F0CE2B4913F00021125A /* MLInput.swift */,
+				9034F0D02B4915430021125A /* StringTokenizer.swift */,
+				9034F0D22B4915C20021125A /* Vocabulary.swift */,
+				9034F0D42B4917DF0021125A /* MLOutput.swift */,
 			);
-			path = Mahizh;
+			path = PicQuery;
 			sourceTree = "<group>";
 		};
 		9011F2522B09393A002DB1B6 /* Preview Content */ = {
@@ -87,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9011F2482B093938002DB1B6 /* Mahizh */ = {
+		9011F2482B093938002DB1B6 /* PicQuery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9011F2572B09393A002DB1B6 /* Build configuration list for PBXNativeTarget "Mahizh" */;
+			buildConfigurationList = 9011F2572B09393A002DB1B6 /* Build configuration list for PBXNativeTarget "PicQuery" */;
 			buildPhases = (
 				9011F2452B093938002DB1B6 /* Sources */,
 				9011F2462B093938002DB1B6 /* Frameworks */,
@@ -99,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = Mahizh;
+			name = PicQuery;
 			productName = Mahizh;
-			productReference = 9011F2492B093938002DB1B6 /* Mahizh.app */;
+			productReference = 9011F2492B093938002DB1B6 /* PicQuery.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -119,7 +146,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9011F2442B093938002DB1B6 /* Build configuration list for PBXProject "Mahizh" */;
+			buildConfigurationList = 9011F2442B093938002DB1B6 /* Build configuration list for PBXProject "PicQuery" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -132,7 +159,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9011F2482B093938002DB1B6 /* Mahizh */,
+				9011F2482B093938002DB1B6 /* PicQuery */,
 			);
 		};
 /* End PBXProject section */
@@ -142,8 +169,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				901B98E82B4971DD004AF176 /* Preview Content in Resources */,
 				9011F2542B09393A002DB1B6 /* Preview Assets.xcassets in Resources */,
 				9011F2512B09393A002DB1B6 /* Assets.xcassets in Resources */,
+				9034F0D82B4918890021125A /* bert-base-uncased-vocab.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,11 +183,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9011F24F2B093938002DB1B6 /* ContentView.swift in Sources */,
+				9011F24F2B093938002DB1B6 /* HomeView.swift in Sources */,
+				9034F0CF2B4913F00021125A /* MLInput.swift in Sources */,
+				9034F0DD2B4922380021125A /* MLQAModel.swift in Sources */,
+				9034F0D52B4917DF0021125A /* MLOutput.swift in Sources */,
+				9034F0C72B488CFA0021125A /* HomeViewModel.swift in Sources */,
 				9011F25B2B093CDA002DB1B6 /* ChatView.swift in Sources */,
+				9034F0D32B4915C20021125A /* Vocabulary.swift in Sources */,
+				901B98EA2B4972AE004AF176 /* PicQueryApp.swift in Sources */,
 				9011F25D2B093D08002DB1B6 /* Loading.swift in Sources */,
 				9011F2602B093D7F002DB1B6 /* ChatMessage.swift in Sources */,
-				9011F24D2B093938002DB1B6 /* MahizhApp.swift in Sources */,
+				9034F0D12B4915430021125A /* StringTokenizer.swift in Sources */,
+				9034F0D92B4918890021125A /* BERTQAFP16.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +327,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Mahizh/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PicQuery/Preview Content\"";
 				DEVELOPMENT_TEAM = BM49FH2FNF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -319,7 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Mahizh/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"PicQuery/Preview Content\"";
 				DEVELOPMENT_TEAM = BM49FH2FNF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -343,7 +379,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9011F2442B093938002DB1B6 /* Build configuration list for PBXProject "Mahizh" */ = {
+		9011F2442B093938002DB1B6 /* Build configuration list for PBXProject "PicQuery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9011F2552B09393A002DB1B6 /* Debug */,
@@ -352,7 +388,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9011F2572B09393A002DB1B6 /* Build configuration list for PBXNativeTarget "Mahizh" */ = {
+		9011F2572B09393A002DB1B6 /* Build configuration list for PBXNativeTarget "PicQuery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9011F2582B09393A002DB1B6 /* Debug */,

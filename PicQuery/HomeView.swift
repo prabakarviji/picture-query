@@ -1,20 +1,18 @@
-//
 //  ContentView.swift
 //  Mahizh
-//
 //  Created by Prabakaran Marimuthu on 18/11/23.
-//
 
 import SwiftUI
 
 import SwiftUI
 import Combine
 
-struct ContentView: View {
+struct HomeView: View {
 	@State var chatMessages: [ChatMessage] = []
+	@State private var model = HomeViewModel()
 	@State var message: String = ""
 	var isLoading: Bool = false
-	var options: [String] = ["Create a reminder","Add a task","Capture a picture"]
+	var options: [String] = ["Upload a picture"]
 	
 	@State var lastMessageID: String = ""
 	
@@ -26,13 +24,17 @@ struct ContentView: View {
 	var body: some View {
 		VStack {
 			HStack {
-				Image(systemName: "bird.circle.fill")
+				Image(systemName: "lasso.badge.sparkles")
 					.font(.largeTitle)
-				Text("mahizh")
+				Text("FindX")
 					.font(.title)
 					.fontWeight(.bold)
 				Spacer()
+				Image(systemName: "photo.badge.plus")
+					.font(.title)
+					.foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
 			}
+
 			ScrollViewReader { proxy in
 				ScrollView(.vertical, showsIndicators: false) {
 					LazyVStack {
@@ -47,31 +49,8 @@ struct ContentView: View {
 					}
 				}
 			}
-			HStack{
-				Text("Hey! Prabs. I'm Mahizh. Your digital assistant. How I can help you?")
-					.background(.white)
-					.foregroundColor(.black)
-			}
-			ScrollView(.horizontal) {
-				LazyHStack {
-					
-					ForEach(options,id:\.self){option in
-						Button(action:{
-							setMessage(selectedOption: option)
-						}) {
-							Text(option)
-								.padding()
-								.background(.gray)
-								.opacity(0.5)
-								.cornerRadius(10)
-								.foregroundColor(.black)
-						}
-					}
-				}
-				.padding(0)
-			}
-			.frame(height: 80)
-			.background(Color(.white))
+	
+
 			Spacer().frame(height: 5)
 			HStack {
 				TextField("Message", text: $message) {}
@@ -79,7 +58,7 @@ struct ContentView: View {
 					.background(colorScheme == .dark ? .gray.opacity(0.2) : .gray.opacity(0.1))
 					.cornerRadius(10)
 				Button{
-					sendMessage()
+					self.model.submitQuestion()
 				} label: {
 					Image(systemName: "arrow.right.circle.fill")
 						.foregroundColor(.black)
@@ -100,29 +79,23 @@ struct ContentView: View {
 	
 	func sendMessage (){
 		guard message != "" else {return}
-		
 		let myMessage = ChatMessage(id: UUID().uuidString, content: message, createdAt: Date(), sender: .me)
 		chatMessages.append(myMessage)
 		lastMessageID = myMessage.id
-		
-		//        openAIService.sendMessage(message: message).sink { completion in
-		//            /// - Handle Error here
-		//        } receiveValue: { response in
-		//            guard let textResponse = response.choices.first?.text.trimmingCharacters(in: .whitespacesAndNewlines.union(.init(charactersIn: "\""))) else {return}
-		//            let chatGPTMessage = ChatMessage(id: response.id, content: textResponse, createdAt: Date(), sender: .chatGPT)
-		//
-		//            chatMessages.append(chatGPTMessage)
-		//            lastMessageID = chatGPTMessage.id
-		//        }
-		//        .store(in: &cancellables)
-		
+		populateReplyMessage()
 		message = ""
 	}
+
+	func populateReplyMessage(){
+		let myMessage = ChatMessage(id: UUID().uuidString, content: "Copy! What is the message?", createdAt: Date(), sender: .chatGPT)
+		chatMessages.append(myMessage)
+	}
+
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
 	static var previews: some View {
-		ContentView()
+		HomeView()
 	}
 }

@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct MahizhApp: App {
+struct PicQueryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
