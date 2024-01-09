@@ -15,29 +15,24 @@ struct TextRecog {
 	//var didFinishRecognition: () -> Void
 	
 	
-	func recognizeText() {
+	func recognizeText(image:Data) {
 		let queue = DispatchQueue(label: "textRecognitionQueue", qos: .userInitiated)
 		queue.async {
-				//guard let cgImage = image.cgImage else { return }
-				guard let cgImage = UIImage(named: "Apple.png")?.cgImage else { return }
-
-				
-				let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-				
-				do {
-					try requestHandler.perform([recognizeTextHandler()])
-					
-					DispatchQueue.main.async {
-						//recognizedContent.items.append(textItem)
-					}
-				} catch {
-					print(error.localizedDescription)
-				}
-				
-				DispatchQueue.main.async {
-					//didFinishRecognition()
-				}
+			guard let cgImage = UIImage(data:image)?.cgImage else { return }
+			let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
 			
+			do {
+				try requestHandler.perform([recognizeTextHandler()])
+				DispatchQueue.main.async {
+					//recognizedContent.items.append(textItem)
+				}
+			} catch {
+				print(error.localizedDescription)
+			}
+			
+			DispatchQueue.main.async {
+				//didFinishRecognition()
+			}
 		}
 	}
 	
@@ -48,7 +43,6 @@ struct TextRecog {
 				print(error.localizedDescription)
 				return
 			}
-			
 			guard let observations = request.results as? [VNRecognizedTextObservation] else { return }
 			
 			observations.forEach { observation in
@@ -57,7 +51,6 @@ struct TextRecog {
 				
 			}
 		}
-		
 		request.recognitionLevel = .accurate
 		request.usesLanguageCorrection = true
 		
