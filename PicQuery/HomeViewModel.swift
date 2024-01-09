@@ -12,7 +12,7 @@ class HomeViewModel {
 	
 	var mlModel = MLQAModel()
 	
-	func submitQuestion() -> Bool {
+	func submitQuestion() {
 		
 		DispatchQueue.global(qos: .userInitiated).async {
 			
@@ -50,7 +50,6 @@ class HomeViewModel {
 //				textField.placeholder = placeholder
 			//}
 		}
-		return true
 	}
 	
 }

@@ -6,6 +6,10 @@ import SwiftUI
 
 import SwiftUI
 import Combine
+import PhotosUI
+import VisionKit
+
+
 
 struct HomeView: View {
 	@State var chatMessages: [ChatMessage] = []
@@ -13,6 +17,8 @@ struct HomeView: View {
 	@State var message: String = ""
 	var isLoading: Bool = false
 	var options: [String] = ["Upload a picture"]
+	@State var selectedItems: [PhotosPickerItem] = []
+
 	
 	@State var lastMessageID: String = ""
 	
@@ -21,18 +27,30 @@ struct HomeView: View {
 	
 	@State var cancellables = Set<AnyCancellable>()
 	
+	
 	var body: some View {
 		VStack {
 			HStack {
 				Image(systemName: "lasso.badge.sparkles")
 					.font(.largeTitle)
-				Text("FindX")
+				Text("PicQuery")
 					.font(.title)
 					.fontWeight(.bold)
 				Spacer()
-				Image(systemName: "photo.badge.plus")
-					.font(.title)
-					.foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+				PhotosPicker(selection: $selectedItems,
+										 matching: .images) {
+					Image(systemName: "photo.badge.plus")
+						.font(.title)
+						.foregroundColor(.blue)
+				}
+//				Image(systemName: "photo.badge.plus")
+//					.font(.title)
+//					.foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/){
+//						PhotosPicker(selection: $selectedItems,
+//												 matching: .images) {
+//							Text("Select Multiple Photos")
+//						}
+//					}
 			}
 
 			ScrollViewReader { proxy in
@@ -58,7 +76,9 @@ struct HomeView: View {
 					.background(colorScheme == .dark ? .gray.opacity(0.2) : .gray.opacity(0.1))
 					.cornerRadius(10)
 				Button{
-					self.model.submitQuestion()
+					//print(self.$selectedItems)
+					//self.model.submitQuestion()
+					TextRecog().recognizeText()
 				} label: {
 					Image(systemName: "arrow.right.circle.fill")
 						.foregroundColor(.black)

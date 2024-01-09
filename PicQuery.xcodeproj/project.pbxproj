@@ -23,6 +23,7 @@
 		9034F0D82B4918890021125A /* bert-base-uncased-vocab.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9034F0D62B4918790021125A /* bert-base-uncased-vocab.txt */; };
 		9034F0D92B4918890021125A /* BERTQAFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9034F0D72B4918890021125A /* BERTQAFP16.mlmodel */; };
 		9034F0DD2B4922380021125A /* MLQAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034F0DC2B4922380021125A /* MLQAModel.swift */; };
+		906C0EE12B4D429E0007A5B9 /* TextRecog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906C0EE02B4D429E0007A5B9 /* TextRecog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		9034F0D62B4918790021125A /* bert-base-uncased-vocab.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "bert-base-uncased-vocab.txt"; sourceTree = "<group>"; };
 		9034F0D72B4918890021125A /* BERTQAFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BERTQAFP16.mlmodel; sourceTree = "<group>"; };
 		9034F0DC2B4922380021125A /* MLQAModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLQAModel.swift; sourceTree = "<group>"; };
+		906C0EE02B4D429E0007A5B9 /* TextRecog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				9034F0D02B4915430021125A /* StringTokenizer.swift */,
 				9034F0D22B4915C20021125A /* Vocabulary.swift */,
 				9034F0D42B4917DF0021125A /* MLOutput.swift */,
+				906C0EE02B4D429E0007A5B9 /* TextRecog.swift */,
 			);
 			path = PicQuery;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				9011F24F2B093938002DB1B6 /* HomeView.swift in Sources */,
 				9034F0CF2B4913F00021125A /* MLInput.swift in Sources */,
 				9034F0DD2B4922380021125A /* MLQAModel.swift in Sources */,
+				906C0EE12B4D429E0007A5B9 /* TextRecog.swift in Sources */,
 				9034F0D52B4917DF0021125A /* MLOutput.swift in Sources */,
 				9034F0C72B488CFA0021125A /* HomeViewModel.swift in Sources */,
 				9011F25B2B093CDA002DB1B6 /* ChatView.swift in Sources */,
