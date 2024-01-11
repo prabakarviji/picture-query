@@ -24,6 +24,7 @@
 		9034F0D92B4918890021125A /* BERTQAFP16.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9034F0D72B4918890021125A /* BERTQAFP16.mlmodel */; };
 		9034F0DD2B4922380021125A /* MLQAModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9034F0DC2B4922380021125A /* MLQAModel.swift */; };
 		906C0EE12B4D429E0007A5B9 /* TextRecog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906C0EE02B4D429E0007A5B9 /* TextRecog.swift */; };
+		90AD9A452B4E981700CA819E /* TextResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AD9A442B4E981700CA819E /* TextResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		9034F0D72B4918890021125A /* BERTQAFP16.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BERTQAFP16.mlmodel; sourceTree = "<group>"; };
 		9034F0DC2B4922380021125A /* MLQAModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLQAModel.swift; sourceTree = "<group>"; };
 		906C0EE02B4D429E0007A5B9 /* TextRecog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecog.swift; sourceTree = "<group>"; };
+		90AD9A442B4E981700CA819E /* TextResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				9034F0D72B4918890021125A /* BERTQAFP16.mlmodel */,
 				9011F25E2B093D6E002DB1B6 /* Model */,
 				9011F24E2B093938002DB1B6 /* HomeView.swift */,
+				90AD9A442B4E981700CA819E /* TextResult.swift */,
 				9034F0C62B488CFA0021125A /* HomeViewModel.swift */,
 				9011F2502B09393A002DB1B6 /* Assets.xcassets */,
 				9011F2522B09393A002DB1B6 /* Preview Content */,
@@ -197,6 +200,7 @@
 				901B98EA2B4972AE004AF176 /* PicQueryApp.swift in Sources */,
 				9011F25D2B093D08002DB1B6 /* Loading.swift in Sources */,
 				9011F2602B093D7F002DB1B6 /* ChatMessage.swift in Sources */,
+				90AD9A452B4E981700CA819E /* TextResult.swift in Sources */,
 				9034F0D12B4915430021125A /* StringTokenizer.swift in Sources */,
 				9034F0D92B4918890021125A /* BERTQAFP16.mlmodel in Sources */,
 			);
