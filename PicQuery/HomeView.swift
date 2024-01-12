@@ -7,6 +7,12 @@ import Combine
 import PhotosUI
 import VisionKit
 
+struct AlertMessage: Identifiable {
+	var id: String {title}
+	var title: String
+	let message: String
+}
+
 struct HomeView: View {
 	
 	var mlModel = MLQAModel()
@@ -19,12 +25,13 @@ struct HomeView: View {
 	@State private var showOption = true
 	@State var questionText = ""
 	@State var answerText = ""
+	@State var showAlert:AlertMessage?
 	
 	var body: some View {
 		VStack {
 			HStack {
-				Image(systemName: "lasso.badge.sparkles")
-					.font(.largeTitle)
+				Image(systemName: "bolt.fill")
+					.font(.title2)
 				Text("PicQuery")
 					.font(.title)
 					.fontWeight(.bold)
@@ -48,10 +55,11 @@ struct HomeView: View {
 							Image(systemName: "text.below.photo")
 								.font(.custom("String", fixedSize: 150))
 								.foregroundColor(.gray)
+								.opacity(0.5)
 							Text("Upload your image here!")
-								.font(.title2)
+								.font(.title3)
 								.foregroundStyle(.gray)
-								.padding(.top,10)
+								.padding(.top,5)
 						}
 					}
 					.onChange(of: selectedPhoto) {
@@ -86,21 +94,18 @@ struct HomeView: View {
 						ScrollView{
 								Text(recognizedContent.result.text).font(.callout)
 						}
-						Divider()
-						VStack(alignment: .leading){
-							if(questionText.isEmpty == false) {
-								Text("Q: \(questionText)").font(.callout).bold().padding(.top,1)
+						Divider().frame(height: 2).background(Color.gray)
+						Spacer()
+						if(questionText.isEmpty == false){
+							VStack(alignment: .leading){
+								if(questionText.isEmpty == false) {
+									Text("Q: \(questionText)").font(.callout).bold().padding(.top,1)
+								}
+								if(answerText.isEmpty == false){
+									Text("A: \(answerText)").font(.callout)
+								}
 							}
-							if(answerText.isEmpty == false){
-								Text("A: \(answerText)").font(.callout)
-							}
-						}.frame(
-							minWidth: 0,
-							maxWidth: .infinity,
-							minHeight: 100,
-							maxHeight: 100,
-							alignment: .topLeading
-						)
+						}
 					}
 				}
 			}
@@ -108,7 +113,7 @@ struct HomeView: View {
 			HStack {
 				TextField("Type your question here", text: $question) {}
 					.padding()
-					.background(colorScheme == .dark ? .gray.opacity(0.2) : .gray.opacity(0.1))
+					.background(colorScheme == .dark ? .gray.opacity(0.3) : .gray.opacity(0.3))
 					.cornerRadius(10)
 				Button{
 					handleSubmit(question:question)
@@ -122,15 +127,23 @@ struct HomeView: View {
 			}
 		}
 		.padding()
+		.alert(item: $showAlert) { show in
+			Alert(title: Text(show.title), message: Text(show.message), dismissButton: .cancel())
+		}
 	}
 	
 	func handleSubmit(question:String){
-		self.questionText = question
-		DispatchQueue.global(qos: .userInitiated).async {
-			let answer = self.mlModel.extractAnswer(for: question, in: recognizedContent.result.text)
-			self.answerText = String(answer)
+		if(question.isEmpty || self.showOption == true){
+			showAlert = AlertMessage(title:"Invalid",message:"Please provide valid input")
 		}
-		self.question = ""
+		else{
+			self.questionText = question
+			DispatchQueue.global(qos: .userInitiated).async {
+				let answer = self.mlModel.extractAnswer(for: question, in: recognizedContent.result.text)
+				self.answerText = String(answer)
+			}
+			self.question = ""
+		}
 	}
 
 }
