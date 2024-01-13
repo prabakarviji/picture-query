@@ -56,6 +56,7 @@ struct HomeView: View {
 								.font(.custom("String", fixedSize: 150))
 								.foregroundColor(.gray)
 								.opacity(0.5)
+								
 							Text("Upload your image here!")
 								.font(.title3)
 								.foregroundStyle(.gray)
@@ -99,10 +100,10 @@ struct HomeView: View {
 						if(questionText.isEmpty == false){
 							VStack(alignment: .leading){
 								if(questionText.isEmpty == false) {
-									Text("Q: \(questionText)").font(.callout).bold().padding(.top,1)
+									Text("Q: \(questionText)").font(.body).bold().padding(.top,1)
 								}
 								if(answerText.isEmpty == false){
-									Text("A: \(answerText)").font(.callout)
+									Text("A: \(answerText)").font(.body)
 								}
 							}
 						}
@@ -137,6 +138,7 @@ struct HomeView: View {
 			showAlert = AlertMessage(title:"Invalid",message:"Please provide valid input")
 		}
 		else{
+			self.answerText = ""
 			self.questionText = question
 			DispatchQueue.global(qos: .userInitiated).async {
 				let answer = self.mlModel.extractAnswer(for: question, in: recognizedContent.result.text)
